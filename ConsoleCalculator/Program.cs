@@ -19,7 +19,7 @@ namespace ConsoleCalculator
 
                 Console.WriteLine("output: " + output);
 
-                Console.WriteLine("input 'e' to exit, anything else to restart:");
+                Console.WriteLine("input 'e' to exit or enter to restart:");
 
                 if (Console.ReadLine() == "e")
                 {
