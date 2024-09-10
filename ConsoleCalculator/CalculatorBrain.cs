@@ -2,27 +2,22 @@
 {
     internal class CalculatorBrain
     {
-        public CalculatorBrain()
-        {
-
-        }
-
-        public int Addition(int value1, int value2)
+        public double Addition(double value1, double value2)
         {
             return value1 + value2;
         } 
 
-        public int Subtraction(int value1, int value2)
+        public double Subtraction(double value1, double value2)
         {
             return value1 - value2;
         }
 
-        public int Multiplication(int value1, int value2)
+        public double Multiplication(double value1, double value2)
         {
             return value1 * value2;
         }
 
-        public double Division(int value1, int value2)
+        public double Division(double value1, double value2)
         {
             return value1 / value2;
         }
