@@ -7,7 +7,7 @@ namespace ConsoleCalculator
         static void Main(string[] args)
         {
             CalculatorBrain calc = new();
-            double[] input;
+            double[]? input;
             double? output;
             bool close = false;
 
@@ -15,22 +15,21 @@ namespace ConsoleCalculator
             {
                 input = MenuSelect();
 
+                if (input == null) { break ; }
+
                 output = Calculate(calc, input[0], input[1], input[2]);
 
                 Console.WriteLine("output: " + output);
 
-                Console.WriteLine("input 'e' to exit or enter to restart:");
+                Console.WriteLine("Press enter to restart:");
 
-                if (Console.ReadLine() == "e")
-                {
-                    close = true;
-                }
+                Console.ReadLine();
             }
 
             Console.Clear();
         }
 
-        static double[] MenuSelect()
+        static double[]? MenuSelect()
         {
             double[] output = new double[3];
             double function;
@@ -39,9 +38,15 @@ namespace ConsoleCalculator
 
             Console.Clear();
 
-            Console.WriteLine("Input 1, 2, 3, or 4 to select either\n" +
-                "addition, subtraction, multiplication, or division:");
+            Console.WriteLine("Input respective number:\n" +
+                "1: Addition\n" +
+                "2: Subtraction\n" +
+                "3: Multiplication\n" +
+                "4: Division\n" +
+                "5: Exit");
             while (!double.TryParse(Console.ReadLine(), out function)) ;
+
+            if (function == 5) { return null; }
 
             Console.WriteLine("Input first input number:");
             while (!double.TryParse(Console.ReadLine(), out input1)) ;
