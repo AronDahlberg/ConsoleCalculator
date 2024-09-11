@@ -44,7 +44,10 @@ namespace ConsoleCalculator
                 "3: Multiplication\n" +
                 "4: Division\n" +
                 "5: Exit");
-            while (!double.TryParse(Console.ReadLine(), out function)) ;
+
+            do {
+                while (!double.TryParse(Console.ReadLine(), out function)) ;
+            } while (function > 5 || function < 1);
 
             if (function == 5) { return null; }
 
